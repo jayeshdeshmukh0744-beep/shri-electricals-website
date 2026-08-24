@@ -118,6 +118,140 @@ footer{background:#070c16;color:#a9b4c5;padding:30px 0;text-align:center;font-si
   .gallery-side{grid-template-columns:1fr 1fr;grid-template-rows:1fr;height:170px}
   .gallery-main{height:300px}
 }
+
+/* ===== PREMIUM MOTION UPGRADE ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(34px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeLeft{
+  from{opacity:0;transform:translateX(-42px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@keyframes floatSoft{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+@keyframes pulseGlow{
+  0%,100%{box-shadow:0 0 0 0 rgba(246,197,21,.38)}
+  50%{box-shadow:0 0 0 12px rgba(246,197,21,0)}
+}
+@keyframes shine{
+  from{transform:translateX(-140%) rotate(18deg)}
+  to{transform:translateX(240%) rotate(18deg)}
+}
+@keyframes scrollDot{
+  0%{transform:translateY(0);opacity:1}
+  80%{transform:translateY(8px);opacity:0}
+  100%{transform:translateY(0);opacity:0}
+}
+
+/* smooth visual polish */
+body{overflow-x:hidden}
+header{transition:background .35s ease,box-shadow .35s ease}
+header.scrolled{background:rgba(7,13,25,.985)!important;box-shadow:0 8px 30px rgba(0,0,0,.22)}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:440px;height:440px;border-radius:50%;
+  right:-130px;top:60px;
+  background:radial-gradient(circle,rgba(246,197,21,.18),transparent 68%);
+  pointer-events:none;
+  animation:floatSoft 7s ease-in-out infinite;
+}
+.hero > *{position:relative;z-index:2}
+
+/* entrance animation */
+.hero .container{animation:fadeUp .9s cubic-bezier(.22,.8,.2,1) both}
+.hero h1{animation:fadeLeft .85s .12s cubic-bezier(.22,.8,.2,1) both}
+.hero p{animation:fadeUp .75s .25s ease both}
+.hero .hero-actions,.hero .actions{animation:fadeUp .75s .38s ease both}
+
+.btn{
+  transition:transform .22s ease,box-shadow .22s ease,filter .22s ease!important;
+  position:relative;overflow:hidden;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(15,23,42,.18);filter:brightness(1.03)}
+.btn-primary{animation:pulseGlow 2.8s infinite}
+.btn::after{
+  content:"";position:absolute;top:-80%;bottom:-80%;width:35%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  animation:shine 4.5s ease-in-out infinite;
+}
+
+nav a{position:relative;transition:color .2s ease}
+nav a::after{
+  content:"";position:absolute;left:0;bottom:-7px;width:0;height:2px;
+  background:var(--yellow);transition:width .25s ease;
+}
+nav a:hover::after{width:100%}
+
+/* Scroll reveal */
+.reveal{
+  opacity:0;
+  transform:translateY(32px);
+  transition:opacity .7s cubic-bezier(.22,.8,.2,1),transform .7s cubic-bezier(.22,.8,.2,1);
+}
+.reveal.show{opacity:1;transform:none}
+.reveal.delay-1{transition-delay:.08s}
+.reveal.delay-2{transition-delay:.16s}
+.reveal.delay-3{transition-delay:.24s}
+
+/* cards and images */
+.service-card,.card,.gallery img,.check,.contact-card{
+  transition:transform .3s cubic-bezier(.22,.8,.2,1),box-shadow .3s ease;
+}
+.service-card:hover,.card:hover,.contact-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 22px 42px rgba(15,23,42,.16);
+}
+.gallery img{will-change:transform}
+.gallery img:hover{transform:scale(1.035);box-shadow:0 18px 35px rgba(15,23,42,.2)}
+.check{transition:transform .25s ease}
+.check:hover{transform:translateX(7px)}
+
+.floating{
+  animation:floatSoft 2.8s ease-in-out infinite;
+  transition:transform .2s ease,filter .2s ease;
+}
+.floating:hover{transform:scale(1.12)!important;filter:brightness(1.1)}
+
+.scroll-top{
+  position:fixed;right:24px;bottom:90px;width:46px;height:46px;border:0;
+  border-radius:50%;background:var(--yellow);color:var(--navy);font-size:20px;
+  font-weight:900;cursor:pointer;z-index:60;opacity:0;pointer-events:none;
+  transform:translateY(15px);transition:.3s ease;box-shadow:0 10px 24px rgba(0,0,0,.2);
+}
+.scroll-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.scroll-top:hover{transform:translateY(-4px)}
+
+.mobile-contact-bar{
+  display:none;
+  position:fixed;left:0;right:0;bottom:0;z-index:55;
+  background:rgba(11,18,32,.97);backdrop-filter:blur(14px);
+  border-top:1px solid rgba(255,255,255,.12);
+  padding:8px max(10px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom));
+  grid-template-columns:repeat(3,1fr);gap:8px;
+}
+.mobile-contact-bar a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;padding:8px 3px;border-radius:11px;color:#fff;font-size:11px;font-weight:800;
+}
+.mobile-contact-bar a:first-child{background:var(--yellow);color:var(--navy)}
+.mobile-contact-bar a:nth-child(2){background:var(--green)}
+.mobile-contact-bar a:nth-child(3){background:#1e293b}
+
+@media(max-width:760px){
+  .mobile-contact-bar{display:grid}
+  body{padding-bottom:72px}
+  .scroll-top{right:16px;bottom:88px}
+  .hero{min-height:610px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
 </style>
 </head>
 <body>
@@ -258,5 +392,47 @@ footer{background:#070c16;color:#a9b4c5;padding:30px 0;text-align:center;font-si
 </footer>
 
 <a class="floating" href="https://wa.me/918983056619?text=Hello%20Shri%20Electricals%2C%20I%20need%20a%20service." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<button class="scroll-top" aria-label="Back to top">↑</button>
+<div class="mobile-contact-bar">
+  <a href="tel:+918983056619"><span>📞</span><span>Call Now</span></a>
+  <a href="https://wa.me/918983056619?text=Hello%20Shri%20Electricals%2C%20I%20need%20a%20service." target="_blank" rel="noopener"><span>💬</span><span>WhatsApp</span></a>
+  <a href="https://maps.app.goo.gl/yDjmsDQVnTtCh47u5" target="_blank" rel="noopener"><span>📍</span><span>Directions</span></a>
+</div>
+
+<script>
+(function(){
+  const header=document.querySelector('header');
+  const topBtn=document.querySelector('.scroll-top');
+  const onScroll=()=>{
+    if(header) header.classList.toggle('scrolled',window.scrollY>20);
+    if(topBtn) topBtn.classList.toggle('show',window.scrollY>500);
+  };
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  const selectors=['section','.service-card','.card','.gallery img','.contact-card','.check'];
+  const items=[...new Set([...document.querySelectorAll(selectors.join(','))])];
+  items.forEach((el,i)=>{
+    if(el.closest('.hero')) return;
+    el.classList.add('reveal');
+    if(i%4===1) el.classList.add('delay-1');
+    if(i%4===2) el.classList.add('delay-2');
+    if(i%4===3) el.classList.add('delay-3');
+  });
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:.12,rootMargin:'0px 0px -35px 0px'});
+  items.forEach(el=>observer.observe(el));
+
+  if(topBtn) topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+})();
+</script>
+
 </body>
 </html>
