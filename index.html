@@ -6,9 +6,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+
 <meta name="theme-color" content="#0b1220">
 <meta name="description" content="Shri Electricals & Gas Stove Repair - Electrical repair, wiring, fan and cooler repair, switch/socket repair, MCB work, gas stove repair, servicing and installation in Nagpur.">
 <title>Shri Electricals & Gas Stove Repair | Nagpur</title>
@@ -252,45 +251,135 @@ footer{background:#070c16;color:#a9b4c5;padding:30px 0;text-align:center;font-si
 @media(prefers-reduced-motion:reduce){#seIntro{display:none!important}}
 
 
-/* PREMIUM BUSINESS UI */
-:root{--gold:#f6c515;--ink:#0b1220;--line:#e6eaf0;--soft:#667085;--shadow:0 18px 50px rgba(15,23,42,.10)}
-body{font-family:"Montserrat",Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-h1,h2,h3,h4,.brand,nav,.btn,.badge,.eyebrow{font-family:"Montserrat",Arial,sans-serif}
-header{background:rgba(7,16,29,.95);box-shadow:0 8px 30px rgba(2,8,23,.13)}
-.nav{height:82px}
-.brand-bolt{box-shadow:0 8px 24px rgba(246,197,21,.22)}
-.nav-right{display:flex;align-items:center;gap:22px}
-nav a{position:relative;transition:.2s}
-nav a::after{content:"";position:absolute;left:0;right:0;bottom:-9px;height:2px;background:var(--gold);transform:scaleX(0);transition:.2s}
-nav a:hover::after{transform:scaleX(1)}
-.header-call{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 17px;border-radius:12px;background:linear-gradient(135deg,#ffd62e,#f2b900);color:#07101d;font-weight:900;font-size:13px;box-shadow:0 10px 25px rgba(246,197,21,.18);transition:.2s}
-.header-call:hover{transform:translateY(-2px)}
-.hero{min-height:700px;background:radial-gradient(circle at 78% 38%,rgba(246,197,21,.10),transparent 28%),linear-gradient(135deg,#07101d,#0b1728 60%,#101d32)}
-.hero h1{letter-spacing:-.035em;line-height:.98}
-.hero h1 strong{color:var(--gold)}
-.hero p{max-width:720px;color:#cbd5e1}
-.location{border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.05);border-radius:999px;padding:9px 13px}
-.btn{min-height:52px;border-radius:13px;font-weight:800;transition:.2s}
-.btn:hover{transform:translateY(-3px)}
-.hero-points{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.hero-points span{padding:8px 11px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.045);color:#e9eef6;font-size:10px;font-weight:800}
-.service,.why-card,.contact-card,.map-box{border:1px solid var(--line);box-shadow:0 8px 25px rgba(15,23,42,.055);transition:.25s}
-.service:hover,.why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#f2d36a}
-.service{display:flex;flex-direction:column}
-.service-link{margin-top:auto;display:inline-flex;padding-top:16px;color:#a76c00;font-size:12px;font-weight:900}
-.why-section{background:linear-gradient(180deg,#f7f9fc,#fff);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.process{background:radial-gradient(circle at 80% 10%,rgba(246,197,21,.11),transparent 25%),linear-gradient(135deg,#07101d,#102038);box-shadow:var(--shadow)}
-.cta{box-shadow:var(--shadow)}
-.mobile-contact{display:none}
-@media(max-width:980px){.header-call{display:none}.why-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:760px){
- .nav{height:72px}.hero{min-height:650px}.why-grid{grid-template-columns:1fr}
- .hero h1{font-size:clamp(2.5rem,12vw,4.2rem)}
- .mobile-contact{position:fixed;left:10px;right:10px;bottom:10px;z-index:100;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border:1px solid rgba(255,255,255,.12);border-radius:17px;background:rgba(7,16,29,.95);box-shadow:0 16px 40px rgba(0,0,0,.28);backdrop-filter:blur(14px)}
- .mobile-contact a{min-height:46px;display:grid;place-items:center;border-radius:11px;font-size:12px;font-weight:900}
- .m-call{background:#f6c515;color:#07101d}.m-wa{background:#25d366;color:#fff}
- body{padding-bottom:70px}
+
+/* ===== COMPLETE PREMIUM FRONTEND REBUILD ===== */
+:root{
+ --navy:#07101d; --navy2:#0d1a2d; --gold:#f6c515; --gold2:#ffd84a;
+ --ink:#101828; --text:#344054; --muted:#667085; --bg:#f6f8fb;
+ --white:#fff; --line:#e6eaf0; --green:#25D366;
+ --radius:22px; --shadow:0 20px 55px rgba(15,23,42,.09);
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+ margin:0;background:var(--bg);color:var(--ink);
+ font-family:"Montserrat",Arial,sans-serif;line-height:1.65;
+ -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility
+}
+h1,h2,h3,h4{font-family:"Montserrat",Arial,sans-serif;color:var(--ink);letter-spacing:-.025em}
+p{color:var(--text)}
+a{transition:.22s ease}
+.container{width:min(1180px,92%);margin:auto}
+
+/* HEADER */
+header{background:rgba(7,16,29,.96);box-shadow:0 8px 32px rgba(2,8,23,.15)}
+.nav{height:82px}
+.brand{font-family:"Montserrat",sans-serif}
+.brand-bolt{border-radius:13px;box-shadow:0 9px 25px rgba(246,197,21,.22)}
+.nav-right{display:flex;align-items:center;gap:22px}
+nav{gap:24px}
+nav a{position:relative;font-weight:700}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:2px;background:var(--gold);transform:scaleX(0);transition:.22s}
+nav a:hover::after{transform:scaleX(1)}
+.header-call-group{display:flex;gap:8px}
+.header-call{
+ display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+ padding:0 15px;border-radius:12px;background:linear-gradient(135deg,var(--gold2),#f0b800);
+ color:#07101d;font-weight:900;font-size:12px;box-shadow:0 9px 25px rgba(246,197,21,.18)
+}
+.header-call.secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.18);box-shadow:none}
+.header-call:hover{transform:translateY(-2px)}
+
+/* HERO */
+.hero{
+ min-height:700px;
+ background:
+ radial-gradient(circle at 78% 30%,rgba(246,197,21,.13),transparent 27%),
+ radial-gradient(circle at 8% 90%,rgba(52,152,219,.09),transparent 25%),
+ linear-gradient(135deg,var(--navy),var(--navy2));
+}
+.hero h1{font-size:clamp(3rem,6vw,5.8rem);line-height:.95;font-weight:900;letter-spacing:-.055em}
+.hero h1 span{color:#fff}.hero h1 strong{color:var(--gold)}
+.hero p{max-width:720px;color:#c8d2df;font-size:clamp(1rem,1.3vw,1.14rem);line-height:1.8}
+.badge,.eyebrow{font-weight:900;letter-spacing:.14em}
+.badge{border:1px solid rgba(246,197,21,.3);background:rgba(246,197,21,.08)}
+.actions{gap:12px}
+.btn{min-height:52px;border-radius:13px;font-weight:800}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.16)}
+.hero-points{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.hero-points span{
+ padding:8px 12px;border:1px solid rgba(255,255,255,.13);
+ border-radius:999px;background:rgba(255,255,255,.045);color:#e8eef7;
+ font-size:10px;font-weight:800
+}
+
+/* SECTIONS */
+section{position:relative}
+.section-head{max-width:800px}
+.section-head h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;font-weight:900}
+.eyebrow{font-size:11px;color:#a56c00;text-transform:uppercase}
+.service-grid,.why-grid{gap:18px}
+.service{
+ border:1px solid var(--line);border-radius:var(--radius);
+ background:linear-gradient(180deg,#fff,#fbfcfe);
+ box-shadow:0 8px 28px rgba(15,23,42,.055);
+ transition:.25s
+}
+.service:hover,.why-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:#f0d36c}
+.service-icon{box-shadow:0 8px 20px rgba(246,197,21,.14)}
+.service-link{font-weight:900;color:#a66b00}
+
+/* ABOUT / GALLERY / CONTACT */
+.about,.gallery,.contact{background:#fff}
+.contact-card,.map-box{
+ border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(15,23,42,.06)
+}
+.map-box iframe{border-radius:18px}
+.cta{
+ border-radius:28px;
+ background:linear-gradient(135deg,#fff,#fff9dc);
+ border:1px solid #f0df94;
+ box-shadow:var(--shadow)
+}
+
+/* WHY US + PROCESS */
+.why-section{background:linear-gradient(180deg,#f7f9fc,#fff);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why-card{position:relative;border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:26px;box-shadow:0 8px 28px rgba(15,23,42,.055);transition:.25s;overflow:hidden}
+.why-no{position:absolute;right:17px;top:12px;font:800 43px/1 "Barlow Condensed",sans-serif;color:#eef1f5}
+.why-icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:#fff7d5;font-size:24px}
+.process{border-radius:26px;background:radial-gradient(circle at 80% 10%,rgba(246,197,21,.12),transparent 25%),linear-gradient(135deg,#07101d,#102038);box-shadow:0 25px 65px rgba(7,16,29,.20)}
+.process h2{color:#fff}
+.process .eyebrow{color:var(--gold2)}
+.process-step b{background:linear-gradient(135deg,var(--gold2),#efb800);color:#07101d}
+
+/* FOOTER */
+footer{background:#050c16}
+footer a:hover{color:var(--gold)}
+
+/* MOBILE CONVERSION */
+.mobile-contact{display:none}
+@media(max-width:1000px){
+ .header-call-group{display:none}
+ .why-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+ .nav{height:72px}
+ .hero{min-height:650px}
+ .hero h1{font-size:clamp(2.65rem,13vw,4.3rem)}
+ .why-grid{grid-template-columns:1fr}
+ .hero-points{gap:7px}.hero-points span{font-size:9px;padding:7px 9px}
+ .mobile-contact{
+   position:fixed;left:10px;right:10px;bottom:10px;z-index:100;
+   display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;padding:8px;
+   border:1px solid rgba(255,255,255,.13);border-radius:17px;
+   background:rgba(7,16,29,.95);backdrop-filter:blur(14px);
+   box-shadow:0 18px 45px rgba(0,0,0,.3)
+ }
+ .mobile-contact a{min-height:46px;display:grid;place-items:center;border-radius:11px;font-size:10px;font-weight:900}
+ .m-call{background:var(--gold);color:#07101d}.m-call-2{background:#fff;color:#07101d}.m-wa{background:var(--green);color:#fff}
+ body{padding-bottom:72px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 
 </style>
 
@@ -422,7 +511,7 @@ footer{padding:28px 0;background:#060d18;color:#9aa8bb}
     <p>Electrical repairs, wiring, appliance repairs and gas stove servicing — helping customers in Nagpur with reliable local service.</p>
     <div class="location">📍 Zingabai Takli, Godhani Road, Nagpur</div>
     <div class="actions">
-      <a class="btn btn-primary" href="tel:+918983056619">📞 Call Now</a>
+      <a class="btn btn-primary" href="tel:+918983056619 &nbsp;|&nbsp; 7507144986">📞 Call Now</a>
       <a class="btn btn-whatsapp" href="https://wa.me/918983056619?text=Hello%20Shri%20Electricals%2C%20I%20need%20a%20service." target="_blank" rel="noopener">💬 WhatsApp Us</a>
       <a class="btn btn-outline" href="https://maps.app.goo.gl/yDjmsDQVnTtCh47u5" target="_blank" rel="noopener">📍 Get Directions</a>
     </div>
@@ -564,8 +653,10 @@ window.addEventListener('load', () => {
 </script>
 
 <div class="mobile-contact" aria-label="Quick contact">
-<a class="m-call" href="tel:+918983056619">📞 Call Now</a>
+<a class="m-call" href="tel:+918983056619">📞 8983056619</a>
+<a class="m-call-2" href="tel:+917507144986">📞 7507144986</a>
 <a class="m-wa" href="https://wa.me/918983056619?text=Hello%20Shri%20Electricals%2C%20I%20need%20a%20service." target="_blank" rel="noopener">💬 WhatsApp</a>
 </div>
+
 </body>
 </html>
